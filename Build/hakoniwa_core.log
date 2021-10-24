@@ -1,0 +1,244 @@
+2021/10/06 04:11:05.202 INFO jsonstring={
+    "core_ipaddr": "172.23.96.1",
+    "core_portno": 50051,
+    "asset_timeout": 3,
+    "SymTimeMeasureFilePath": null,
+    "inside_assets": [
+        {
+            "name": "RoboModel",
+            "pdu_writer_names": [
+                "RoboModel_ev3_sensorPdu"
+            ],
+            "pdu_reader_names": [
+                "RoboModel_ev3_actuatorPdu",
+            ]
+        }
+    ],
+    "outside_assets": [
+        {
+            "name": "Athrill",
+            "class_name": "Hakoniwa.PluggableAsset.Assets.Micon.EV3.Ev3MiconAssetController"
+        }
+    ],
+    "pdu_writers": [
+        {
+            "name": "RoboModel_ev3_sensorPdu",
+            "class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Ev3.Ev3PduWriter",
+            "conv_class_name" : "Hakoniwa.PluggableAsset.Communication.Pdu.Ev3.Ev3PduWriterProtobufConverter",
+            "pdu_config_name": "Ev3PduSensor",
+        }
+    ],
+    "pdu_readers": [
+        {
+            "name": "RoboModel_ev3_actuatorPdu",
+            "class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Ev3.Ev3PduReader",
+            "conv_class_name" : "Hakoniwa.PluggableAsset.Communication.Pdu.Ev3.Ev3PduReaderProtobufConverter",
+            "pdu_config_name": "Ev3PduAcuator",
+        }
+    ],
+    "pdu_configs": [
+        {
+            "pdu_type_name": "Ev3PduAcuator",
+			"pdu_data_field_path" : "./pdu/Ev3PduAcuator.json"
+        },
+        {
+            "pdu_type_name": "Ev3PduSensor",
+			"pdu_data_field_path" : "./pdu/Ev3PduSensor.json"
+        },
+        {
+            "pdu_type_name": "Ev3PduAcuatorHeader",
+			"pdu_data_field_path" : "./pdu/Ev3PduAcuatorHeader.json"
+        },
+        {
+            "pdu_type_name": "Ev3PduColorSensor",
+			"pdu_data_field_path" : "./pdu/Ev3PduColorSensor.json"
+        },
+        {
+            "pdu_type_name": "Ev3PduMotor",
+			"pdu_data_field_path" : "./pdu/Ev3PduMotor.json"
+        },
+        {
+            "pdu_type_name": "Ev3PduSensorHeader",
+			"pdu_data_field_path" : "./pdu/Ev3PduSensorHeader.json"
+        },
+        {
+            "pdu_type_name": "Ev3PduTouchSensor",
+			"pdu_data_field_path" : "./pdu/Ev3PduTouchSensor.json"
+        },
+    ],    
+    "udp_methods": [
+        {
+            "method_name": "UdpMethod1",
+            "ipaddr": "172.23.97.98",
+            "portno": 54002,
+            "iosize": 1024,
+            "is_read": false
+        },
+        {
+            "method_name": "UdpMethod2",
+            "ipaddr": "172.23.96.1",
+            "portno": 54001,
+            "iosize": 1024,
+            "is_read": true
+        },
+        {
+            "method_name": "UdpMethod3",
+            "ipaddr": "172.23.97.98",
+            "portno": 54003,
+            "iosize": 1024,
+            "is_read": false
+        },
+        {
+            "method_name": "UdpMethod4",
+            "ipaddr": "172.23.97.98",
+            "portno": 54004,
+            "iosize": 1024,
+            "is_read": false
+        }
+    ],
+    "mmap_methods": null,
+    "reader_connectors": [
+        {
+            "name": "reader_connector1",
+            "pdu_name": "RoboModel_ev3_actuatorPdu",
+            "method_name": "UdpMethod2"
+        }
+    ],
+    "writer_connectors": [
+        {
+            "name": "writer_connector1",
+            "pdu_name": "RoboModel_ev3_sensorPdu",
+            "method_name": "UdpMethod1"
+        },
+        {
+            "name": "writer_connector2",
+            "pdu_name": "RoboModel_ev3_sensorPdu",
+            "method_name": "UdpMethod3"
+        },
+        {
+            "name": "writer_connector3",
+            "pdu_name": "RoboModel_ev3_actuatorPdu",
+            "method_name": "UdpMethod4"
+        }
+    ],
+    "pdu_channel_connectors": [
+        {
+            "outside_asset_name": "Athrill",
+            "reader_connector_name": "reader_connector1",
+            "writer_connector_name": "writer_connector1"
+        },
+        {
+            "outside_asset_name": null,
+            "reader_connector_name": null,
+            "writer_connector_name": "writer_connector2"
+        },
+        {
+            "outside_asset_name": null,
+            "reader_connector_name": null,
+            "writer_connector_name": "writer_connector3"
+        }
+    ]
+}
+
+2021/10/06 04:11:05.239 DEBUG LoadPduConfig(): pdu_type_name=Ev3PduAcuator
+2021/10/06 04:11:05.245 DEBUG LoadPduConfig(): pdu_type_name=Ev3PduSensor
+2021/10/06 04:11:05.250 DEBUG LoadPduConfig(): pdu_type_name=Ev3PduAcuatorHeader
+2021/10/06 04:11:05.255 DEBUG LoadPduConfig(): pdu_type_name=Ev3PduColorSensor
+2021/10/06 04:11:05.260 DEBUG LoadPduConfig(): pdu_type_name=Ev3PduMotor
+2021/10/06 04:11:05.265 DEBUG LoadPduConfig(): pdu_type_name=Ev3PduSensorHeader
+2021/10/06 04:11:05.270 DEBUG LoadPduConfig(): pdu_type_name=Ev3PduTouchSensor
+2021/10/06 04:11:05.274 DEBUG STRUCT:header type=Ev3PduSensorHeader
+2021/10/06 04:11:05.274 DEBUG PRIMITIVE:name type=string
+2021/10/06 04:11:05.275 DEBUG PRIMITIVE:version type=uint32
+2021/10/06 04:11:05.276 DEBUG PRIMITIVE:hakoniwa_time type=int64
+2021/10/06 04:11:05.276 DEBUG PRIMITIVE:ext_off type=uint32
+2021/10/06 04:11:05.276 DEBUG PRIMITIVE:ext_size type=uint32
+2021/10/06 04:11:05.277 DEBUG type uint8[1] name buttons
+2021/10/06 04:11:05.277 DEBUG PRIMITIVE ARRAY:buttons type=uint8[1]
+2021/10/06 04:11:05.279 DEBUG type Ev3PduColorSensor[2] name color_sensors
+2021/10/06 04:11:05.279 DEBUG PRIMITIVE:color type=uint32
+2021/10/06 04:11:05.279 DEBUG PRIMITIVE:reflect type=uint32
+2021/10/06 04:11:05.279 DEBUG PRIMITIVE:rgb_r type=uint32
+2021/10/06 04:11:05.280 DEBUG PRIMITIVE:rgb_g type=uint32
+2021/10/06 04:11:05.280 DEBUG PRIMITIVE:rgb_b type=uint32
+2021/10/06 04:11:05.280 DEBUG PRIMITIVE:color type=uint32
+2021/10/06 04:11:05.280 DEBUG PRIMITIVE:reflect type=uint32
+2021/10/06 04:11:05.281 DEBUG PRIMITIVE:rgb_r type=uint32
+2021/10/06 04:11:05.281 DEBUG PRIMITIVE:rgb_g type=uint32
+2021/10/06 04:11:05.281 DEBUG PRIMITIVE:rgb_b type=uint32
+2021/10/06 04:11:05.281 DEBUG STRUCT ARRAY:color_sensors type=Ev3PduColorSensor[2]
+2021/10/06 04:11:05.282 DEBUG type Ev3PduTouchSensor[2] name touch_sensors
+2021/10/06 04:11:05.282 DEBUG PRIMITIVE:value type=uint32
+2021/10/06 04:11:05.282 DEBUG PRIMITIVE:value type=uint32
+2021/10/06 04:11:05.282 DEBUG STRUCT ARRAY:touch_sensors type=Ev3PduTouchSensor[2]
+2021/10/06 04:11:05.282 DEBUG type uint32[3] name motor_angle
+2021/10/06 04:11:05.283 DEBUG PRIMITIVE ARRAY:motor_angle type=uint32[3]
+2021/10/06 04:11:05.283 DEBUG PRIMITIVE:gyro_degree type=int32
+2021/10/06 04:11:05.283 DEBUG PRIMITIVE:gyro_degree_rate type=int32
+2021/10/06 04:11:05.284 DEBUG PRIMITIVE:sensor_ultrasonic type=uint32
+2021/10/06 04:11:05.284 DEBUG PRIMITIVE:gps_lat type=float64
+2021/10/06 04:11:05.284 DEBUG PRIMITIVE:gps_lon type=float64
+2021/10/06 04:11:05.285 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Ev3.Ev3PduWriter
+2021/10/06 04:11:05.285 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Ev3.Ev3PduWriter
+2021/10/06 04:11:05.286 INFO pdu writer loaded:Hakoniwa.PluggableAsset.Communication.Pdu.Ev3.Ev3PduWriter
+2021/10/06 04:11:05.286 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Ev3.Ev3PduWriterProtobufConverter
+2021/10/06 04:11:05.287 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Ev3.Ev3PduWriterProtobufConverter
+2021/10/06 04:11:05.287 INFO activate class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Ev3.Ev3PduWriterProtobufConverter
+2021/10/06 04:11:05.287 DEBUG pdu_writer: RoboModel_ev3_sensorPdu
+2021/10/06 04:11:05.288 DEBUG STRUCT:header type=Ev3PduAcuatorHeader
+2021/10/06 04:11:05.288 DEBUG PRIMITIVE:name type=string
+2021/10/06 04:11:05.288 DEBUG PRIMITIVE:version type=uint32
+2021/10/06 04:11:05.289 DEBUG PRIMITIVE:asset_time type=int64
+2021/10/06 04:11:05.289 DEBUG PRIMITIVE:ext_off type=uint32
+2021/10/06 04:11:05.289 DEBUG PRIMITIVE:ext_size type=uint32
+2021/10/06 04:11:05.289 DEBUG type uint8[1] name leds
+2021/10/06 04:11:05.289 DEBUG PRIMITIVE ARRAY:leds type=uint8[1]
+2021/10/06 04:11:05.290 DEBUG type Ev3PduMotor[3] name motors
+2021/10/06 04:11:05.290 DEBUG PRIMITIVE:power type=int32
+2021/10/06 04:11:05.290 DEBUG PRIMITIVE:stop type=uint32
+2021/10/06 04:11:05.290 DEBUG PRIMITIVE:reset_angle type=uint32
+2021/10/06 04:11:05.291 DEBUG PRIMITIVE:power type=int32
+2021/10/06 04:11:05.291 DEBUG PRIMITIVE:stop type=uint32
+2021/10/06 04:11:05.291 DEBUG PRIMITIVE:reset_angle type=uint32
+2021/10/06 04:11:05.291 DEBUG PRIMITIVE:power type=int32
+2021/10/06 04:11:05.292 DEBUG PRIMITIVE:stop type=uint32
+2021/10/06 04:11:05.292 DEBUG PRIMITIVE:reset_angle type=uint32
+2021/10/06 04:11:05.292 DEBUG STRUCT ARRAY:motors type=Ev3PduMotor[3]
+2021/10/06 04:11:05.292 DEBUG PRIMITIVE:gyro_reset type=uint32
+2021/10/06 04:11:05.292 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Ev3.Ev3PduReader
+2021/10/06 04:11:05.293 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Ev3.Ev3PduReader
+2021/10/06 04:11:05.293 INFO pdu writer loaded:Hakoniwa.PluggableAsset.Communication.Pdu.Ev3.Ev3PduReader
+2021/10/06 04:11:05.293 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Ev3.Ev3PduReaderProtobufConverter
+2021/10/06 04:11:05.293 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Ev3.Ev3PduReaderProtobufConverter
+2021/10/06 04:11:05.294 INFO activate class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Ev3.Ev3PduReaderProtobufConverter
+2021/10/06 04:11:05.294 INFO pdu reader name = RoboModel_ev3_actuatorPdu
+2021/10/06 04:11:05.305 INFO UdpMethod : UdpMethod1: 172.23.97.98: 54002
+2021/10/06 04:11:05.307 INFO UdpMethod : UdpMethod3: 172.23.97.98: 54003
+2021/10/06 04:11:05.308 INFO UdpMethod : UdpMethod4: 172.23.97.98: 54004
+2021/10/06 04:11:05.308 INFO reader connector method_name=UdpMethod2
+2021/10/06 04:11:05.309 INFO reader connector pdu_name=RoboModel_ev3_actuatorPdu
+2021/10/06 04:11:05.311 INFO PduChannelConnector :writer_connector1
+2021/10/06 04:11:05.311 INFO PduChannelConnector :writer_connector2
+2021/10/06 04:11:05.311 INFO PduChannelConnector :writer_connector3
+2021/10/06 04:11:05.312 DEBUG RoboModel :pdu io connect add writer:RoboModel_ev3_sensorPdu
+2021/10/06 04:11:05.312 DEBUG PduIoConnector AddWriter: RoboModel_ev3_sensorPdu
+2021/10/06 04:11:05.313 DEBUG RoboModel pdu io connect add reader:RoboModel_ev3_actuatorPdu
+2021/10/06 04:11:05.313 INFO path= class_name=Hakoniwa.PluggableAsset.Assets.Micon.EV3.Ev3MiconAssetController
+2021/10/06 04:11:05.313 INFO load typeinfoHakoniwa.PluggableAsset.Assets.Micon.EV3.Ev3MiconAssetController
+2021/10/06 04:11:05.314 INFO OutSideAsset :Athrill
+2021/10/06 04:11:05.480 INFO RegisterInsideAsset Success:RoboModel
+2021/10/06 04:11:09.358 INFO Register:Athrill
+2021/10/06 04:11:09.359 INFO RegisterOutsideAsset :Athrill
+2021/10/06 04:11:09.359 INFO RegisterOutsideAsset Success:Athrill
+2021/10/06 04:11:09.360 INFO Register Success: Athrill
+2021/10/06 04:11:09.382 INFO AssetNotificationStart:Athrill
+2021/10/06 04:11:10.478 INFO StartFeedback:Runnable
+2021/10/06 04:11:10.478 INFO AssetFeedback(RoboModel):True
+2021/10/06 04:11:10.478 INFO StateChanged:Runnable
+2021/10/06 04:11:11.391 INFO StartFeedback:Runnable
+2021/10/06 04:11:11.391 INFO AssetFeedback(Athrill):True
+2021/10/06 04:11:11.392 INFO StateChanged:Runnable
+2021/10/06 04:11:18.413 INFO AssetFeedback(RoboModel):True
+2021/10/06 04:11:18.413 INFO StateChanged:Stopping
+2021/10/06 04:11:19.404 INFO AssetFeedback(Athrill):True
+2021/10/06 04:11:19.404 INFO StateChanged:Stopped
